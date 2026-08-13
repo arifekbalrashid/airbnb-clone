@@ -2,7 +2,7 @@
 
 This is the frontend component of the Airbnb Clone project, built with Next.js (App Router), Tailwind CSS, and TypeScript.
 
-## 🚀 Quick Start
+## Quick Start
 
 1. Install dependencies:
    ```bash
