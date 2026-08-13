@@ -364,7 +364,13 @@ export default function Navbar() {
                   </div>
                   <div className="w-[1px] h-6 bg-gray-300"></div>
                   <div className="text-sm text-gray-500 pl-4 pr-1 flex items-center gap-3 whitespace-nowrap">
-                    {searchWho ? `${searchWho} guest${searchWho !== "1" ? "s" : ""}` : (pathname === '/services' ? 'Add service' : 'Add guests')}
+                    {searchWho
+                      ? pathname === '/services'
+                        ? searchWho
+                        : `${searchWho} guest${searchWho !== "1" ? "s" : ""}`
+                      : pathname === '/services'
+                        ? 'Add service'
+                        : 'Add guests'}
                     <div className="bg-[#FF385C] p-2 rounded-full text-white">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
