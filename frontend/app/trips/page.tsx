@@ -77,7 +77,7 @@ export default function TripsPage() {
           {bookings.map((b) => {
             const isCompleted = new Date(b.check_out) < new Date();
             const canCancel = b.status === "confirmed" && new Date(b.check_in) > new Date();
-            const canReview = b.status === "confirmed" && isCompleted;
+            const canReview = (b.status === "confirmed" || b.status === "completed") && isCompleted;
             
             return (
             <div key={b.id} className="flex flex-col sm:flex-row gap-4 border border-gray-200 rounded-xl p-4">
@@ -100,7 +100,7 @@ export default function TripsPage() {
                   </div>
                   <span
                     className={`text-xs px-2 py-1 rounded-full font-medium ${
-                      b.status === "confirmed" && isCompleted
+                      (b.status === "confirmed" && isCompleted) || b.status === "completed"
                         ? "bg-gray-100 text-gray-700"
                         : b.status === "confirmed"
                         ? "bg-green-50 text-green-600"
@@ -109,7 +109,7 @@ export default function TripsPage() {
                         : "bg-gray-100 text-gray-500"
                     }`}
                   >
-                    {b.status === "confirmed" && isCompleted
+                    {(b.status === "confirmed" && isCompleted) || b.status === "completed"
                       ? "Completed"
                       : b.status.charAt(0).toUpperCase() + b.status.slice(1)}
                   </span>
