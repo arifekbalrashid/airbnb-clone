@@ -49,7 +49,7 @@ IMG = {
         {"url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop", "caption": "Beach Access"},
     ],
     "mountain": [
-        {"url": "https://images.unsplash.com/photo-1470770841497-7b3200f18830?w=1200&h=800&fit=crop", "caption": "Exterior"},
+        {"url": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1200&h=800&fit=crop", "caption": "Exterior"},
         {"url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&h=800&fit=crop", "caption": "Living room"},
         {"url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&h=800&fit=crop", "caption": "Bedroom 1"},
         {"url": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&h=800&fit=crop", "caption": "Kitchenette"},
@@ -84,7 +84,7 @@ IMG = {
         {"url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=800&fit=crop", "caption": "Exterior"},
         {"url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&h=800&fit=crop", "caption": "Lobby"},
         {"url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&h=800&fit=crop", "caption": "Bedroom"},
-        {"url": "https://images.unsplash.com/photo-1590490360182-c33d955e4c47?w=1200&h=800&fit=crop", "caption": "Washroom"},
+        {"url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&h=800&fit=crop", "caption": "Washroom"},
         {"url": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&h=800&fit=crop", "caption": "Dining area"},
         {"url": "https://images.unsplash.com/photo-1535827841776-24afc1e255ac?w=1200&h=800&fit=crop", "caption": "Pool"},
     ],

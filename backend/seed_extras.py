@@ -193,7 +193,7 @@ EXPERIENCES = [
         "rating": 4.94,
         "review_count": 156,
         "is_original": True,
-        "image_url": "https://images.unsplash.com/photo-1502680390548-bdbac40e7a78?w=800&h=800&fit=crop",
+        "image_url": "https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c?w=800&h=800&fit=crop",
     },
     {
         "title": "Jazz & Blues Night Walk in New Orleans",
