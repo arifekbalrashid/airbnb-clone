@@ -29,7 +29,7 @@ export default function CurrencyModal({ isOpen, onClose }: CurrencyModalProps) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <h2 className="text-xl font-semibold">Language and region</h2>
+          <h2 className="text-xl font-semibold">Currency</h2>
         </div>
         
         <div>
