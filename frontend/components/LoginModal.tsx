@@ -302,7 +302,7 @@ export default function LoginModal({ isOpen, onClose, roleFilter }: LoginModalPr
           {/* Demo hint */}
           {mode === "login" && (
             <div className="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
-              <p className="text-xs text-gray-500 font-medium mb-3 text-center">Fast Login for Interviewer</p>
+              <p className="text-xs text-gray-500 font-medium mb-3 text-center">Fast Login</p>
               <div className="flex gap-2">
                 <button
                   type="button"
