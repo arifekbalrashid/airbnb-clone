@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { getListings } from "@/lib/api";
 import { ListingCard as ListingCardType } from "@/types";
@@ -10,6 +11,10 @@ import { formatPrice } from "@/utils/formatters";
 
 function ServicesContent() {
   const { currentUser, openLoginModal } = useAuth();
+  const searchParams = useSearchParams();
+  const location = searchParams.get("location") || "";
+  const serviceType = searchParams.get("service_type") || "";
+  
   const [wishlist, setWishlist] = useState<number[]>([]);
   const [services, setServices] = useState<ListingCardType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +22,11 @@ function ServicesContent() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await getListings({ property_type: "service", limit: 50 });
+        const params: Record<string, string | number> = { property_type: "service", limit: 50 };
+        if (location) params.location = location;
+        if (serviceType) params.service_type = serviceType;
+        
+        const res = await getListings(params);
         setServices(res.data);
       } catch (e) {
         console.error("Failed to load services:", e);
@@ -26,7 +35,7 @@ function ServicesContent() {
       }
     }
     load();
-  }, []);
+  }, [location, serviceType]);
 
   const toggleWishlist = (id: number) => {
     if (!currentUser) {

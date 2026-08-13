@@ -2,14 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { getListings } from "@/lib/api";
 import { ListingCard as ListingCardType } from "@/types";
 import { formatPrice } from "@/utils/formatters";
 
-export default function ExperiencesPage() {
+function ExperiencesContent() {
   const { currentUser, openLoginModal } = useAuth();
+  const searchParams = useSearchParams();
+  const location = searchParams.get("location") || "";
+  
   const [wishlist, setWishlist] = useState<number[]>([]);
   const [experiences, setExperiences] = useState<ListingCardType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +21,10 @@ export default function ExperiencesPage() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await getListings({ property_type: "experience", limit: 50 });
+        const params: Record<string, string | number> = { property_type: "experience", limit: 50 };
+        if (location) params.location = location;
+        
+        const res = await getListings(params);
         setExperiences(res.data);
       } catch (e) {
         console.error("Failed to load experiences:", e);
@@ -26,7 +33,7 @@ export default function ExperiencesPage() {
       }
     }
     load();
-  }, []);
+  }, [location]);
 
   const toggleWishlist = (id: number) => {
     if (!currentUser) {
@@ -115,5 +122,13 @@ export default function ExperiencesPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function ExperiencesPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-center">Loading experiences...</div>}>
+      <ExperiencesContent />
+    </Suspense>
   );
 }

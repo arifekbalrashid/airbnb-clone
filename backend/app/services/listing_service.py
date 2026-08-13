@@ -11,6 +11,7 @@ from app.models import Listing, ListingImage, Amenity, Booking, listing_amenitie
 def get_listings(
     db: Session,
     location: Optional[str] = None,
+    service_type: Optional[str] = None,
     check_in=None,
     check_out=None,
     guests: Optional[int] = None,
@@ -31,6 +32,15 @@ def get_listings(
                 Listing.city.ilike(pattern),
                 Listing.location.ilike(pattern),
                 Listing.country.ilike(pattern),
+            )
+        )
+
+    if service_type:
+        st_pattern = f"%{service_type}%"
+        query = query.filter(
+            or_(
+                Listing.title.ilike(st_pattern),
+                Listing.description.ilike(st_pattern),
             )
         )
 

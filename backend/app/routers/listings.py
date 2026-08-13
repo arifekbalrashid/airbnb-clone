@@ -16,6 +16,7 @@ router = APIRouter()
 @router.get("")
 def list_listings(
     location: Optional[str] = None,
+    service_type: Optional[str] = None,
     check_in: Optional[date] = None,
     check_out: Optional[date] = None,
     guests: Optional[int] = None,
@@ -29,7 +30,7 @@ def list_listings(
     db: Session = Depends(get_db),
 ):
     result = listing_service.get_listings(
-        db, location=location, check_in=check_in, check_out=check_out,
+        db, location=location, service_type=service_type, check_in=check_in, check_out=check_out,
         guests=guests, min_price=min_price, max_price=max_price,
         property_type=property_type, amenities=amenities, sort_by=sort_by,
         page=page, limit=limit,
