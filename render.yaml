@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: airbnb-clone-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python seed.py && python seed_extras.py && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: FRONTEND_URL
+        sync: false
