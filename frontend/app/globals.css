@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #222222;
+  --color-primary: #FF385C;
+  --color-primary-hover: #E31C5F;
+  --color-gray-50: #F7F7F7;
+  --color-gray-100: #EBEBEB;
+  --color-gray-200: #DDDDDD;
+  --color-gray-300: #B0B0B0;
+  --color-gray-400: #717171;
+  --color-gray-500: #484848;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-foreground);
+  background: var(--color-background);
+}
+
+.animate-slide-up {
+  animation: slide-up 0.2s ease-out;
+}
