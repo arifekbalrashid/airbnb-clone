@@ -2,7 +2,7 @@
 
 This is the frontend component of the Airbnb Clone project, built with Next.js (App Router), Tailwind CSS, and TypeScript.
 
-## Quick Start
+## 🚀 Quick Start
 
 1. Install dependencies:
    ```bash
@@ -14,6 +14,9 @@ This is the frontend component of the Airbnb Clone project, built with Next.js (
    npm run dev
    ```
 
-3. Open [http://localhost:3000](http://localhost:3000) with your browser.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-*Note: Ensure the FastAPI backend is running on port 8000 for the application to function correctly. Please refer to the main project README in the root directory for full setup instructions.*
+> [!NOTE]
+> Ensure the FastAPI backend is running on port 8000 for the application to function correctly. 
+
+**For full setup instructions, architecture details, and screenshots of the working application, please refer to the [Main Project README](../README.md) in the root directory.**

@@ -1,32 +1,57 @@
 # Airbnb Clone
 
-A full-stack Airbnb clone application built with Next.js (React), Tailwind CSS, Python (FastAPI), and SQLite. This project implements core features of Airbnb including browsing listings, property details, user authentication flows, wishlists, and host management.
+A full-stack Airbnb clone application built with Next.js (React), Tailwind CSS, Python (FastAPI), and SQLite. This project implements the core features of Airbnb, including browsing listings, viewing property details, user authentication, wishlists, filtering, booking flows, and host management.
 
-## Tech Stack
+## 🚀 Live Demo & Screenshots
+
+Here is a look at the core features in action:
+
+### 1. Homepage & Discovery
+The dynamic homepage features responsive grid layouts mirroring modern aesthetics. Real-time data fetching allows users to seamlessly browse stays, experiences, and services.
+<img src="./frontend/public/screenshots/home.png" alt="Homepage Screenshot" width="800"/>
+
+### 2. Detailed Property Listings
+The property detail page displays rich media galleries, pricing details, host information, available amenities, and a dynamic booking widget with date selection.
+<img src="./frontend/public/screenshots/listing.png" alt="Listing Details Screenshot" width="800"/>
+
+### 3. Search & Filtering
+The interactive search bar enables complex queries by location, check-in/check-out dates, and guest count. The backend efficiently processes these queries to return targeted results.
+<img src="./frontend/public/screenshots/search.png" alt="Search Results Screenshot" width="800"/>
+
+## 🛠️ Tech Stack
 
 ### Frontend
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Components**: React Hooks & Context API
+- **State Management**: React Hooks & Context API
+- **Maps**: React-Leaflet for location visualization
 
 ### Backend
 - **Framework**: FastAPI (Python)
 - **Database**: SQLite with SQLAlchemy ORM
-- **Authentication**: JWT Tokens
-- **API Documentation**: Swagger UI (built-in with FastAPI)
+- **Authentication**: JWT Tokens & OAuth integration
+- **API Documentation**: Swagger UI (auto-generated)
 
-## Features Included
+## ✨ Core Features
 
-- **Dynamic Homepage**: Browse stays, experiences, and services with real-time data fetching.
-- **Advanced Layout**: Responsive UI closely mirroring the real Airbnb design, featuring grid layouts and modern aesthetics.
-- **Detailed Listings**: View property details, prices, amenities, and host information.
-- **Wishlist System**: Save and remove favorite properties.
-- **Checkout & Bookings**: Calculate nightly rates, cleaning fees, taxes, and complete mock bookings.
+- **Dynamic Homepage**: Browse stays, experiences, and services.
+- **Advanced Layout & UI**: Responsive design strictly adhering to modern UI/UX principles, featuring fluid grid layouts, micro-animations, and sticky components.
+- **Detailed Listings**: Comprehensive property details, pricing breakdowns, amenities, and host information.
+- **Wishlist System**: Save and remove favorite properties effortlessly.
+- **Checkout & Bookings**: Calculate nightly rates, cleaning fees, taxes, and complete reservations.
 - **Host Dashboard**: Manage listings, view incoming bookings, and track reservations.
+- **Search & Filtering**: Search properties by location, dates, and number of guests.
 - **Dynamic Seeding**: Realistic seed data for diverse property types, experiences, and professional services.
 
-## Setup Instructions
+## ⚙️ Architecture & Data Flow
+
+- The backend exposes RESTful API endpoints via FastAPI routers.
+- The frontend consumes data using standard `fetch` APIs within both Server Components and Client Components in Next.js.
+- Authentication utilizes a robust JWT strategy to simulate secure user login states, coordinating with backend endpoints.
+- Component architecture promotes reusability, utilizing Tailwind CSS utility classes for efficient, scalable styling.
+
+## 💻 Setup Instructions
 
 ### 1. Backend Setup (FastAPI)
 
@@ -70,9 +95,5 @@ A full-stack Airbnb clone application built with Next.js (React), Tailwind CSS, 
    ```
 4. Open your browser and visit `http://localhost:3000`.
 
-## Architecture & Data Flow
-
-- The backend provides RESTful API endpoints via FastAPI routers.
-- The frontend uses `fetch` within Next.js Server Components and Client Components to consume data.
-- The UI strictly adheres to Airbnb's design system using Tailwind CSS utilities (e.g., specific aspect ratios for listing cards, sticky booking components, and modal forms).
-- Authentication uses a mock `AuthContext` to simulate user login states on the frontend, coordinating with backend user endpoints.
+---
+*Developed with a focus on clean architecture, performance, and responsive design.*
