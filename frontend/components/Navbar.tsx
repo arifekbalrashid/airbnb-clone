@@ -527,14 +527,20 @@ export default function Navbar() {
                 >
                   <div className="flex flex-col justify-center w-full">
                     <label className="text-xs font-bold text-black tracking-wide cursor-pointer">{pathname === '/services' ? 'Type of service' : 'Who'}</label>
-                    <input
-                      type="text"
-                      placeholder={pathname === '/services' ? 'Add service' : 'Add guests'}
-                      value={searchWho}
-                      onChange={(e) => setSearchWho(e.target.value)}
-                      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                      className="w-full bg-transparent border-none p-0 text-sm text-gray-600 focus:outline-none focus:ring-0 placeholder-gray-400 truncate"
-                    />
+                    {pathname === '/services' ? (
+                      <input
+                        type="text"
+                        placeholder="Add service"
+                        value={searchWho}
+                        onChange={(e) => setSearchWho(e.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                        className="w-full bg-transparent border-none p-0 text-sm text-gray-600 focus:outline-none focus:ring-0 placeholder-gray-400 truncate"
+                      />
+                    ) : (
+                      <div className="text-sm text-gray-600 truncate">
+                        {parseInt(searchWho) > 0 ? `${parseInt(searchWho)} guest${parseInt(searchWho) > 1 ? 's' : ''}` : <span className="text-gray-400">Add guests</span>}
+                      </div>
+                    )}
                   </div>
 
                   {/* Search Button */}
@@ -646,6 +652,43 @@ export default function Navbar() {
                       <button className="border border-gray-200 px-4 py-2 rounded-full text-xs font-medium hover:border-black shrink-0">± 3 days</button>
                       <button className="border border-gray-200 px-4 py-2 rounded-full text-xs font-medium hover:border-black shrink-0">± 7 days</button>
                       <button className="border border-gray-200 px-4 py-2 rounded-full text-xs font-medium hover:border-black shrink-0">± 14 days</button>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* Guest Count Dropdown */}
+              {activeSearchTab === "who" && pathname !== '/services' && (
+                <>
+                  <div className="fixed inset-0 z-30" onClick={() => setActiveSearchTab(null)} />
+                  <div className="absolute top-[80px] right-0 w-[350px] bg-white rounded-[32px] shadow-[0_10px_40px_rgba(0,0,0,0.1)] p-6 z-50 border border-gray-200">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-semibold text-[15px] text-gray-800">Guests</div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const current = parseInt(searchWho) || 0;
+                            if (current > 0) setSearchWho((current - 1).toString());
+                          }}
+                          className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${parseInt(searchWho || '0') > 0 ? 'border-gray-400 text-gray-500 hover:border-black hover:text-black' : 'border-gray-200 text-gray-200 cursor-not-allowed'}`}
+                        >
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" /></svg>
+                        </button>
+                        <div className="w-4 text-center text-[15px]">{parseInt(searchWho) || 0}</div>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const current = parseInt(searchWho) || 0;
+                            setSearchWho((current + 1).toString());
+                          }}
+                          className="w-8 h-8 rounded-full border border-gray-400 text-gray-500 flex items-center justify-center hover:border-black hover:text-black transition-colors"
+                        >
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </>
