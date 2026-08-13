@@ -153,30 +153,6 @@ export default function HostDashboard() {
         </div>
       </div>
 
-      {/* We're here to help */}
-      <div>
-        <h2 className="text-[22px] font-semibold mb-6">We're here to help</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="border border-gray-200 rounded-xl p-6 flex justify-between items-center cursor-pointer hover:border-black transition-colors bg-white shadow-sm">
-            <div>
-              <h3 className="font-semibold mb-1 text-[15px]">Join your local Host Club</h3>
-              <p className="text-[13px] text-gray-500">Connect, collaborate and share with other Hosts.</p>
-            </div>
-            <div className="w-12 h-12 rounded-lg bg-[#FF385C]/10 flex items-center justify-center text-[#FF385C] shrink-0 ml-4">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-            </div>
-          </div>
-          <div className="border border-gray-200 rounded-xl p-6 flex justify-between items-center cursor-pointer hover:border-black transition-colors bg-white shadow-sm">
-            <div>
-              <h3 className="font-semibold mb-1 text-[15px]">Contact specialized support</h3>
-              <p className="text-[13px] text-gray-500">As a Host, you get fast access to a specialized support team.</p>
-            </div>
-            <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500 shrink-0 ml-4">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
