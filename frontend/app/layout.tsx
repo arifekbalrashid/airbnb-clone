@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${nunitoSans.variable} antialiased`}>
       <body className="min-h-screen flex flex-col">
-        <GoogleOAuthProvider clientId="640979592402-v1vd97715cvvm9a09u9s878jo1agouep.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "640979592402-v1vd97715cvvm9a09u9s878jo1agouep.apps.googleusercontent.com"}>
           <AuthProvider>
             <CurrencyProvider>
               <ToastProvider>
