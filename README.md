@@ -68,7 +68,7 @@ The database seeding script creates pre-configured demo accounts to explore diff
    ```
 2. Create and activate a Python virtual environment:
    ```bash
-   python -m venv venv
+   python -m venv venv or python3 -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    ```
 3. Install dependencies:
@@ -77,8 +77,8 @@ The database seeding script creates pre-configured demo accounts to explore diff
    ```
 4. Seed the database with sample data:
    ```bash
-   python seed.py
-   python seed_extras.py
+   python seed.py or python3 seed.py
+   python seed_extras.py or python3 seed_extras.py
    ```
 5. Run the FastAPI development server:
    ```bash
