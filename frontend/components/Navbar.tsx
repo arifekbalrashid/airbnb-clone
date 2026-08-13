@@ -271,9 +271,7 @@ export default function Navbar() {
                       <button onClick={() => { switchToTravelling(); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">
                         Switch to travelling
                       </button>
-                      <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">Account</button>
                       <div className="border-t border-gray-100 my-1"></div>
-                      <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">Help Centre</button>
                       <button onClick={handleLogout} className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">Log out</button>
                     </div>
                   </>
@@ -445,7 +443,6 @@ export default function Navbar() {
                           <button onClick={openGeneralLogin} className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">Log in</button>
                           <div className="border-t border-gray-100 my-1"></div>
                           <button onClick={openHostLogin} className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">Airbnb your home</button>
-                          <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">Help Centre</button>
                         </>
                       ) : (
                         <>
@@ -462,7 +459,6 @@ export default function Navbar() {
                               Switch to hosting
                             </button>
                           )}
-                          <button className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">Account</button>
                           <div className="border-t border-gray-100 my-1"></div>
                           <button onClick={handleLogout} className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50">Log out</button>
                         </>
