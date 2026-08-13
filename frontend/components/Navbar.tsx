@@ -546,11 +546,20 @@ export default function Navbar() {
                   {/* Search Button */}
                   <button
                     onClick={(e) => { e.stopPropagation(); handleSearch(); }}
-                    className="ml-2 w-12 h-12 rounded-full bg-[#FF385C] hover:bg-[#D70466] flex items-center justify-center shrink-0 transition-all duration-300"
+                    className={`ml-2 h-12 rounded-full bg-[#FF385C] hover:bg-[#D70466] flex items-center justify-center shrink-0 transition-all duration-300 overflow-hidden ${
+                      activeSearchTab !== null ? 'w-28 px-4' : 'w-12'
+                    }`}
                   >
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                    <svg className={`text-white transition-all duration-300 ${activeSearchTab !== null ? 'w-4 h-4' : 'w-5 h-5'}`} fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
+                    <span
+                      className={`text-white font-semibold text-[15px] transition-all duration-300 whitespace-nowrap overflow-hidden ${
+                        activeSearchTab !== null ? 'ml-2 w-14 opacity-100' : 'ml-0 w-0 opacity-0'
+                      }`}
+                    >
+                      Search
+                    </span>
                   </button>
                 </div>
               </div>
